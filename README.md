@@ -177,3 +177,171 @@ SELECT * FROM garajes;
  <br>
  
  1. Primero se crea la tabla persona con sus diferentes campos.
+
+![image](https://user-images.githubusercontent.com/103035621/165370204-3e20907e-d00e-4c30-b4cb-d612073e2f45.png)
+
+<details>
+  <summary>Código SQL Tabla PERSONA.</summary>
+<br>
+<p align="justify">Este código corresponde a la tabla de PERSONA donde tomamos todos sus datos personales y los almacenamos en las diferentes columnas</p>
+  
+  ```sql
+CREATE TABLE UD14_EJERCICIO_18.persona
+(
+	dni VARCHAR (10)PRIMARY KEY, 
+	FK_dni VARCHAR(10),
+	CONSTRAINT FK_dni FOREIGN KEY (FK_dni) REFERENCES persona(dni) ON DELETE 	CASCADE ON UPDATE CASCADE, 
+	nombre VARCHAR (20)NOT NULL, 
+	apellidos VARCHAR (20)NOT NULL, 
+	teléfono_fijo INT NOT NULL,
+	teléfono_movil INT NOT NULL UNIQUE, 
+	codigo_personal INT NOT NULL UNIQUE AUTO_INCREMENT
+);
+  ```
+ </details>
+ <br>
+ 
+2. Se crea la tabla inmueble con los diferentes campos.
+
+![INMUEBLES](https://user-images.githubusercontent.com/103035621/165371717-777bc361-0267-4af5-875e-c28d637eaa34.PNG)
+
+ <details>
+  <summary>Código SQL Tabla INMUEBLE.</summary>
+<br>
+<p align="justify">Este código corresponde a la tabla de INMUEBLE donde tomamos todos los datos genericos del imueble y los almacenamos en las diferentes columnas</p>
+  
+  ```sql
+CREATE TABLE inmueble 
+(
+	codigo_inmueble INT AUTO_INCREMENT PRIMARY KEY,
+	direccion VARCHAR(40)NOT NULL,
+	descripcion VARCHAR(100) NOT NULL,
+	metros_inmueble FLOAT NOT NULL
+);
+  ```
+ </details>
+ <br>
+ 
+  3. Se crea la tabla alquiler con sus diferentes campos.
+
+![ALQUILER](https://user-images.githubusercontent.com/103035621/165372290-49fdb160-2db0-4143-8357-5f9565490c7c.PNG)
+
+<details>
+  <summary>Código SQL Tabla ALQUILER.</summary>
+<br>
+<p align="justify">Este código corresponde a la tabla de ALQUILER donde tomamos todos los datos y los almacenamos en las diferentes columnas</p>
+  
+  ```sql
+CREATE TABLE alquiler 
+(
+	codigo_alquiler INT AUTO_INCREMENT PRIMARY KEY,
+	año INT NOT NULL,
+	mes INT NOT NULL,
+	valor FLOAT(10,4) NOT NULL,
+	FK_personaalquiler VARCHAR(20),
+    FK_codigoinmueble_A INT,
+	CONSTRAINT FK_personaalquiler FOREIGN KEY (FK_personaalquiler) REFERENCES persona(dni) 
+    ON 	DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FK_codigoinmueble_A FOREIGN KEY (FK_codigoinmueble_A) REFERENCES inmueble(codigo_inmueble) 
+    ON 	DELETE CASCADE ON UPDATE CASCADE
+);
+  ```
+ </details>
+ <br>
+ 
+   4. Se crea la tabla compra con sus diferentes campos.
+
+![COMPRA](https://user-images.githubusercontent.com/103035621/165372801-2a2c5b89-7240-46ac-98a2-c37ad78eb649.PNG)
+
+<details>
+  <summary>Código SQL Tabla COMPRA.</summary>
+<br>
+<p align="justify">Este código corresponde a la tabla de COMPRA donde tomamos todos los datos y los almacenamos en las diferentes columnas</p>
+  
+  ```sql
+CREATE TABLE compra 
+(
+	codigo_compra INT AUTO_INCREMENT PRIMARY KEY,
+	año INT NOT NULL,
+	fecha DATE NOT NULL,
+	valor FLOAT(10,4) NOT NULL,
+	FK_personacompra VARCHAR(20),
+    FK_codigoinmueble_C INT,
+	CONSTRAINT FK_personacompra FOREIGN KEY (FK_personacompra) REFERENCES persona(dni) 
+    ON 	DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FK_codigoinmueble_C FOREIGN KEY (FK_codigoinmueble_C) REFERENCES inmueble(codigo_inmueble) 
+    ON 	DELETE CASCADE ON UPDATE CASCADE
+);
+  ```
+ </details>
+ <br>
+ 
+   4. Se crea la tabla locales con sus diferentes campos.
+
+![LOCALES](https://user-images.githubusercontent.com/103035621/165373239-48a86646-6f6f-42b9-b76d-03d13763ac09.PNG)
+
+
+<details>
+  <summary>Código SQL Tabla LOCALES.</summary>
+<br>
+<p align="justify">Este código corresponde a la tabla de LOCALES donde tomamos todos los datos y los almacenamos en las diferentes columnas</p>
+  
+  ```sql
+CREATE TABLE locales
+(
+	id_local INT AUTO_INCREMENT PRIMARY KEY,
+	uso_local VARCHAR(30)NOT NULL,
+	tiene_servicio VARCHAR(30) NOT NULL,
+	FK_inmueble INT, 
+	CONSTRAINT FK_inmueble FOREIGN KEY (FK_inmueble) REFERENCES 	inmueble(codigo_inmueble) 
+    ON 	DELETE CASCADE ON UPDATE CASCADE
+);
+  ```
+ </details>
+ <br>
+ 
+   5. Se crea la tabla pisos con sus diferentes campos.
+
+![PISOS](https://user-images.githubusercontent.com/103035621/165373513-c53e26fa-2c2e-4bab-9c0b-d2ee4043e9dc.PNG)
+
+<details>
+  <summary>Código SQL Tabla PISOS.</summary>
+<br>
+<p align="justify">Este código corresponde a la tabla de PISOS donde tomamos todos los datos y los almacenamos en las diferentes columnas</p>
+  
+  ```sql
+CREATE TABLE pisos (
+	id_pisos INT AUTO_INCREMENT PRIMARY KEY,
+	FK_inmueblepiso INT,
+	CONSTRAINT FK_inmueblepiso FOREIGN KEY (FK_inmueblepiso) REFERENCES 	inmueble(codigo_inmueble) 
+    ON 	DELETE CASCADE ON UPDATE CASCADE
+	);
+  ```
+ </details>
+ <br>
+ 
+   6. Por último se crea la tabla garajes con sus diferentes campos.
+
+![GARAJES](https://user-images.githubusercontent.com/103035621/165373897-0cea1181-6807-4f65-9727-56a781d70241.PNG)
+
+<details>
+  <summary>Código SQL Tabla GARAJES.</summary>
+<br>
+<p align="justify">Este código corresponde a la tabla de GARAJES donde tomamos todos los datos y los almacenamos en las diferentes columnas</p>
+  
+  ```sql
+CREATE TABLE garajes (
+	id_garaje INT AUTO_INCREMENT PRIMARY KEY,
+	num_garaje INT NOT NULL,
+	planta_garaje INT NOT NULL,
+	FK_inmueblegaraje INT,
+	FK_pisosgaraje INT,
+	CONSTRAINT FK_inmueblegaraje FOREIGN KEY (FK_inmueblegaraje) REFERENCES 	inmueble(codigo_inmueble) 
+    ON 	DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FK_pisosgaraje FOREIGN KEY (FK_pisosgaraje) REFERENCES pisos(id_pisos) 
+    ON 	DELETE CASCADE ON UPDATE CASCADE
+	);
+  ```
+ </details>
+ <br>
+ 
