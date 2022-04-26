@@ -175,8 +175,8 @@ SELECT * FROM garajes;
   ```
  </details>
  <br>
- 
- 1. Primero se crea la tabla persona con sus diferentes campos.
+ <p align="justify">
+ 1. Primero se crea la tabla persona con sus diferentes campos. Esta tabla estará formada por las columnas (dni, nombre, apellidos, teléfono_fijo, teléfono_movil y código_personal). Al ser reflexiva tendrá la columna FK_dni que tendrá como referencia persona(dni). </p>
 
 ![image](https://user-images.githubusercontent.com/103035621/165370204-3e20907e-d00e-4c30-b4cb-d612073e2f45.png)
 
@@ -200,8 +200,8 @@ CREATE TABLE UD14_EJERCICIO_18.persona
   ```
  </details>
  <br>
- 
-2. Se crea la tabla inmueble con los diferentes campos.
+<p align="justify"> 
+2. Se crea la tabla inmueble con los diferentes campos. Definos 4 columnas (codigo_inmueble, direccion, descripcion y metros_inmueble), la primera de ellas como clave primaria.</p>
 
 ![INMUEBLES](https://user-images.githubusercontent.com/103035621/165371717-777bc361-0267-4af5-875e-c28d637eaa34.PNG)
 
@@ -221,8 +221,8 @@ CREATE TABLE inmueble
   ```
  </details>
  <br>
- 
-  3. Se crea la tabla alquiler con sus diferentes campos.
+ <p align="justify">
+  3. Se crea la tabla alquiler con sus diferentes campos. Esta tabla tendrá como columnas (codigo_alquiler, año, mes, valor) , la primera columna "codigo_alquiler" como clave primaria. Esta tabla estará referenciada por la tabla persona y inmueble, para ello tendrá 2 claves foráneas (FK_personaalquiler) que hará referencia a la tabla persona(dni) y (FK_codigoinmueble_A) que hará referencia a la tabla inmueble(codigo_inmueble).</p>
 
 ![ALQUILER](https://user-images.githubusercontent.com/103035621/165372290-49fdb160-2db0-4143-8357-5f9565490c7c.PNG)
 
@@ -248,8 +248,8 @@ CREATE TABLE alquiler
   ```
  </details>
  <br>
- 
-   4. Se crea la tabla compra con sus diferentes campos.
+ <p align="justify">
+   4. Se crea la tabla compra con sus diferentes campos. Dicha tabla tendrá como columnas (codigo_compra, año, fecha, valor) , la primera de ellas como clave primaria, y como clave foránea tendra "FK_personacompra" que referencia persona(dni) y "FK_codigoinmueble_C" que hará referencia a inmueble(codigo_inmueble).</p>
 
 ![COMPRA](https://user-images.githubusercontent.com/103035621/165372801-2a2c5b89-7240-46ac-98a2-c37ad78eb649.PNG)
 
@@ -275,8 +275,8 @@ CREATE TABLE compra
   ```
  </details>
  <br>
- 
-   4. Se crea la tabla locales con sus diferentes campos.
+ <p align="justify">
+   5. Se crea la tabla locales con sus diferentes campos. Esta tabla estará formada por 4 columnas (id_local, uso_local y tiene_servicio), la primera de ellas como clave primaria y tendrá "FK_inmueble" como clave foránea , esta hará referencia a inmueble(codigo_inmueble).</p>
 
 ![LOCALES](https://user-images.githubusercontent.com/103035621/165373239-48a86646-6f6f-42b9-b76d-03d13763ac09.PNG)
 
@@ -299,8 +299,8 @@ CREATE TABLE locales
   ```
  </details>
  <br>
- 
-   5. Se crea la tabla pisos con sus diferentes campos.
+ <p align="justify">
+   6. Se crea la tabla pisos con sus diferentes campos. Estará formada por (id_pisos) como única columna propia y de tipo clave primaria, y "FK_inmueblepiso" como clave foránea de inmueble(codigo_inmueble).</p>
 
 ![PISOS](https://user-images.githubusercontent.com/103035621/165373513-c53e26fa-2c2e-4bab-9c0b-d2ee4043e9dc.PNG)
 
@@ -319,8 +319,8 @@ CREATE TABLE pisos (
   ```
  </details>
  <br>
- 
-   6. Por último se crea la tabla garajes con sus diferentes campos.
+ <p align="justify">
+   7. Por último se crea la tabla garajes con sus diferentes campos. Esta tabla tendra como columnas (id_garaje, num_garaje, planta_garaje) , la id_garaje como clave primaria, y como claves foráneas tendrá a "FK_inmueblegaraje" que hará referéncia a inmueble(codigo_inmueble) y a "FK_pisosgaraje" que apuntará directamente a pisos(id_pisos).</p>
 
 ![GARAJES](https://user-images.githubusercontent.com/103035621/165373897-0cea1181-6807-4f65-9727-56a781d70241.PNG)
 
