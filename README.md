@@ -363,7 +363,7 @@ CREATE TABLE garajes (
  <details>
   <summary>Sentencias INSERT utilizadas.</summary>
 <br>
-<p align="justify">Este código corresponde a la tabla de GARAJES donde tomamos todos los datos y los almacenamos en las diferentes columnas</p>
+<p align="justify">Este código corresponde los diferentes insert utilizados para comprobar el funcionamiento.</p>
   
   ```sql
 	/* INSERT EN LA TABLA PERSONA Y SELECT * FROM PERSONA */
