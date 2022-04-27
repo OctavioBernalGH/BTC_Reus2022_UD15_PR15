@@ -1,5 +1,11 @@
 <h1>Proyecto UD15 Ejercicio número 18</h1>
 
+Este ejercicio ha sido realizado por los miembros del equipo 1. Dicho equipo esta formado por:
+
+[- Octavio Bernal](https://github.com/OctavioBernalGH)<br>
+[- David Dalmau](https://github.com/DavidDalmauDieguez)<br>
+[- J.Oriol López Bosch](https://github.com/mednologic)
+
 <p align="justify"> En este proyecto simularemos una inmobiliaria , donde un cliente podrá comprar o alquilar un inmueble, ya sea del tipo inmueble (no definido) como del tipo local, garaje o piso. </p>
 
 ![UD_15_PROYECTO](https://user-images.githubusercontent.com/103035621/165376459-91d218d2-4da3-4cbf-a825-843322560e7b.PNG)
