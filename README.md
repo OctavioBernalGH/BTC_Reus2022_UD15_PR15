@@ -6,7 +6,13 @@ Este ejercicio ha sido realizado por los miembros del equipo 1. Dicho equipo est
 [- David Dalmau](https://github.com/DavidDalmauDieguez)<br>
 [- J.Oriol López Bosch](https://github.com/mednologic)
 
-<p align="justify"> En este proyecto simularemos una inmobiliaria , donde un cliente podrá comprar o alquilar un inmueble, ya sea del tipo inmueble (no definido) como del tipo local, garaje o piso. </p>
+<p align="justify"> En este proyecto simularemos una inmobiliaria , donde un cliente podrá comprar o alquilar un inmueble, ya sea del tipo inmueble (no definido) como del tipo local, garaje o piso. 
+	
+Para ello hemos diseñado primero el modelo entidad relación y el modelo relacional.</p>
+
+![ER-MR-esquema](https://user-images.githubusercontent.com/103035621/165505620-e75e395d-857d-4de1-a10e-897d3d1d6910.png)
+
+A continuación se muestra una imagen que define el esquema de datos realizado con ingenieria inversa.
 
 ![UD_15_PROYECTO](https://user-images.githubusercontent.com/103035621/165376459-91d218d2-4da3-4cbf-a825-843322560e7b.PNG)
 
