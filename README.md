@@ -10,7 +10,7 @@ Este ejercicio ha sido realizado por los miembros del equipo 1. Dicho equipo est
 	
 Para ello hemos diseñado primero el modelo entidad relación y el modelo relacional.</p>
 
-![ER-MR-esquema](https://user-images.githubusercontent.com/103035621/165505620-e75e395d-857d-4de1-a10e-897d3d1d6910.png)
+[- Esquema entidad-relacion y modelo relacional.](https://github.com/OctavioBernalGH/BTC_Reus2022_UD15_PR15/blob/main/ER-MR-esquema.png)
 
 A continuación se muestra una imagen que define el esquema de datos realizado con ingenieria inversa.
 
